@@ -1,6 +1,6 @@
 #include "livreur.h"
 #include<QDebug>
-#include<QDebug>
+
 void Livreur ::  afficher(QSqlQueryModel *model)
 {
     model->setQuery("SELECT * FROM Livreur;");
