@@ -37,6 +37,7 @@ public:
     bool supprimer(int id);
     void trie(QSqlQueryModel *model, QString critere);
     void recherche(QSqlQueryModel *model , QString critere , QString ch);
+    bool ajout();
 
 };
 

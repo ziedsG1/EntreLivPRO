@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<QSqlQueryModel>
 #include"livreur.h"
+#include"vehicule.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -45,9 +46,19 @@ private slots:
 
     void on_ajoutV_clicked();
 
+    void on_triveh_currentTextChanged(const QString &arg1);
+
+    void on_rechveh_textChanged(const QString &arg1);
+
+    void on_conf_ajoutLiv_clicked();
+
+    void on_ajoutVih_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQueryModel *Model_tabLiv ;
+    QSqlQueryModel *Model_tabveh ;
     Livreur l ;
+    Vehicule v ;
 };
 #endif // MAINWINDOW_H

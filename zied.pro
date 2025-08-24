@@ -12,12 +12,14 @@ SOURCES += \
     connection.cpp \
     livreur.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    vehicule.cpp
 
 HEADERS += \
     connection.h \
     livreur.h \
-    mainwindow.h
+    mainwindow.h \
+    vehicule.h
 
 FORMS += \
     mainwindow.ui

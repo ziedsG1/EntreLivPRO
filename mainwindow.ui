@@ -420,7 +420,7 @@ QPushButton:hover {
     <property name="title">
      <string>GroupBox</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="ID">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -447,63 +447,63 @@ QLineEdit:hover {
 </string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="L">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>260</x>
        <y>210</y>
        <width>37</width>
        <height>12</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>ID</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="L_2">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>260</x>
        <y>260</y>
        <width>37</width>
        <height>12</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>NOM</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="L_5">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>260</x>
        <y>310</y>
-       <width>37</width>
-       <height>12</height>
+       <width>51</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>PRENOM</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="L_3">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>260</x>
        <y>360</y>
        <width>37</width>
        <height>12</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>NUM</string>
      </property>
     </widget>
     <widget class="QPushButton" name="conf_ajoutLiv">
      <property name="geometry">
       <rect>
        <x>340</x>
-       <y>400</y>
+       <y>480</y>
        <width>91</width>
        <height>31</height>
       </rect>
@@ -565,7 +565,7 @@ QPushButton:hover {
       <string>retour</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="NOM">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -592,7 +592,7 @@ QLineEdit:hover {
 </string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="PRENOM">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -619,7 +619,7 @@ QLineEdit:hover {
 </string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="NUM">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -644,6 +644,46 @@ QLineEdit:hover {
                                       stop:0 #00c6ff, stop:1 #0072ff);
 }
 </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="EMAIL">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>400</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #4facfe, stop:1 #00f2fe);
+    color: white;
+    font: bold 12px &quot;Segoe UI&quot;;
+    border-radius: 15px;
+    padding: 10px 15px;  /* un peu moins large que QPushButton */
+    border: none;
+}
+
+QLineEdit:hover {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #00c6ff, stop:1 #0072ff);
+}
+</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="L_4">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>410</y>
+       <width>37</width>
+       <height>12</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>EMAIL</string>
      </property>
     </widget>
    </widget>
@@ -758,7 +798,7 @@ QPushButton:pressed {
       <string>Modifier</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_2">
+    <widget class="QComboBox" name="triveh">
      <property name="geometry">
       <rect>
        <x>630</x>
@@ -810,16 +850,21 @@ QComboBox::down-arrow {
      </property>
      <item>
       <property name="text">
-       <string>matricule</string>
+       <string>MATRICUL</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Nouvel élément</string>
+       <string>type</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>id_l</string>
       </property>
      </item>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
+    <widget class="QLineEdit" name="rechveh">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -857,7 +902,7 @@ QLineEdit:pressed, QComboBox:pressed {
 </string>
      </property>
     </widget>
-    <widget class="QTableView" name="tableView">
+    <widget class="QTableView" name="tabveh">
      <property name="geometry">
       <rect>
        <x>225</x>
@@ -987,7 +1032,7 @@ QPushButton:pressed {
       <rect>
        <x>330</x>
        <y>410</y>
-       <width>101</width>
+       <width>91</width>
        <height>31</height>
       </rect>
      </property>
@@ -1015,7 +1060,7 @@ QPushButton:pressed {
       <string>ajouter</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
+    <widget class="QLineEdit" name="MAT">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -1053,7 +1098,7 @@ QLineEdit:pressed, QComboBox:pressed {
 </string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_7">
+    <widget class="QLineEdit" name="TYPE">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -1091,7 +1136,7 @@ QLineEdit:pressed, QComboBox:pressed {
 </string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
+    <widget class="QLineEdit" name="IDL">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -1129,42 +1174,43 @@ QLineEdit:pressed, QComboBox:pressed {
 </string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_9">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>360</y>
-       <width>131</width>
-       <height>31</height>
+       <x>210</x>
+       <y>220</y>
+       <width>56</width>
+       <height>16</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit, QComboBox {
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                      stop:0 #43e97b, stop:1 #38f9d7);
-    color: white;
-    font: bold 10px &quot;Segoe UI&quot;;
-    border-radius: 15px;
-    padding: 10px 30px;
-    border: none;
-}
-
-/* Hover effect */
-QLineEdit:hover, QComboBox:hover {
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                      stop:0 #00f260, stop:1 #0575e6);
-}
-
-/* Focus effect for LineEdit */
-QLineEdit:focus {
-    border: 2px solid #0575e6;
-}
-
-/* Pressed (when active typing or selection) */
-QLineEdit:pressed, QComboBox:pressed {
-    background-color: #009245;
-}
-</string>
+     <property name="text">
+      <string>MATRICULE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>270</y>
+       <width>56</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TYPE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>215</x>
+       <y>320</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID LIVREUR</string>
      </property>
     </widget>
    </widget>
@@ -1175,7 +1221,7 @@ QLineEdit:pressed, QComboBox:pressed {
      <x>0</x>
      <y>0</y>
      <width>1048</width>
-     <height>17</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

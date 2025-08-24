@@ -7,22 +7,33 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     Model_tabLiv= new QSqlQueryModel();
+    Model_tabveh= new QSqlQueryModel();
     ui->setupUi(this);
     ui->tabLiv->setModel(Model_tabLiv);
+    ui->tabveh->setModel(Model_tabveh);
     Connection c;
-    if (c.createconnect() == false )
+    if (!c.createconnect())
     {
-        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
-                            QObject::tr("connection failed.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
+        QMessageBox::critical(
+            nullptr,
+            QObject::tr("Base de données"),
+            QObject::tr("Échec de connexion.\n"
+                        "Cliquez sur Annuler pour quitter."),
+            QMessageBox::Cancel
+        );
     }
     else
     {
-        QMessageBox::critical(nullptr, QObject::tr("database is open"),
-                            QObject::tr("connection succes.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
+        QMessageBox::information(
+            nullptr,
+            QObject::tr("Base de données"),
+            QObject::tr("Connexion réussie.\n"
+                        "Cliquez sur OK pour continuer."),
+            QMessageBox::Ok
+        );
     }
     l.afficher(Model_tabLiv) ;
+    v.afficher(Model_tabveh);
     ui->choix->show();
     ui->livreur->hide();
     ui->grp_ajoutLiv->hide();
@@ -165,3 +176,80 @@ void MainWindow::on_retourVih_clicked()
 
 
 
+
+void MainWindow::on_triveh_currentTextChanged(const QString &arg1)
+{
+    v.trie(Model_tabveh , arg1);
+}
+
+void MainWindow::on_rechveh_textChanged(const QString &arg1)
+{
+    v.recherche(Model_tabveh , ui->triveh->currentText() , arg1);
+}
+
+void MainWindow::on_conf_ajoutLiv_clicked()
+{
+    Livreur l(ui->ID->text().toInt(),
+              ui->NOM->text(),
+              ui->PRENOM->text(),
+              ui->NUM->text().toInt(),
+              ui->EMAIL->text());
+    if(l.ajout())
+    {
+        QMessageBox::critical(
+            nullptr,
+            QObject::tr("Base de données"),
+            QObject::tr("Échec de connexion.\n"
+                        "Cliquez sur Annuler pour quitter."),
+            QMessageBox::Cancel
+        );
+        l.trie(Model_tabLiv , ui->triLiv->currentText());
+        ui->NOM->clear();
+    }
+    else
+    {
+        QMessageBox::information(
+            nullptr,
+            QObject::tr("Base de données"),
+            QObject::tr("Connexion réussie.\n"
+                        "Cliquez sur OK pour continuer."),
+            QMessageBox::Ok
+        );
+    }
+}
+
+void MainWindow::on_ajoutVih_clicked()
+{
+    QString image = "";
+    Vehicule v(ui->IDL->text().toInt(),
+              ui->MAT->text().toInt(),
+              ui->TYPE->text(),
+               image
+               );
+
+
+    if(v.ajout())
+    {
+        QMessageBox::critical(
+            nullptr,
+            QObject::tr("Base de données"),
+            QObject::tr("Échec de connexion.\n"
+                        "Cliquez sur Annuler pour quitter."),
+            QMessageBox::Cancel
+        );
+        v.trie(Model_tabveh , ui->triLiv->currentText());
+        ui->IDL->clear();
+        ui->MAT->clear();
+        ui->TYPE->clear();
+    }
+    else
+    {
+        QMessageBox::information(
+            nullptr,
+            QObject::tr("Base de données"),
+            QObject::tr("Connexion réussie.\n"
+                        "Cliquez sur OK pour continuer."),
+            QMessageBox::Ok
+        );
+    }
+}
